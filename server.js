@@ -40,6 +40,11 @@ const logger = (req, res, next) => {
   next();
 };
 */
+if(process.env.NODE_ENV==="development") {
+  app.get('/', (req, res)=> res.status(200).send("development") )
+  } else {
+     app.get('/', (req, res)=> res.status(200).send("production") )
+  }
 
 
 //user route
